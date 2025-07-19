@@ -20,11 +20,11 @@ const Users: React.FC<{ users: UserProps[] }> = ({ users, posts }) => {
               <UserCard {...user} key={key} />
             ))
           }
-          {
+          {/*
             posts.map(({ title, body, userId, id }: PostProps, key: number) => (
               <PostCard title={title} body={body} userId={userId} id={id} key={key} />
             ))
-          }
+          */}
         </div>
       </main>
     </div>
