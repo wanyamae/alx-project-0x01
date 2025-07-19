@@ -1,25 +1,21 @@
-import Link from 'next/link'; 
+import Header from '@/components/layout/Header';
 
-const Header: React.FC = () => {
-  return (
-    <header className="bg-blue-600 text-white shadow-md py-4">
-      <div className="container mx-auto flex justify-between items-center px-4">
-        <h3 className="font-bold text-2xl">
-     <Link href="/">Daily Contents</Link>
-  </h3>
-        <nav>
-          <ul className="flex space-x-6">
-            <li className="hover:underline">
-              <Link href="/posts">Posts</Link>
-            </li>
-            <li className="hover:underline">
-              <Link href="/users">Users</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-  );
+const User: React.FC = () => {
+    return (
+        <div className="flex flex-col h-screen">
+            <Header />
+            <main className="flex-grow flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600">
+                <div className="text-center">
+                    <h1 className="text-5xl font-bold text-white">
+                        User Page
+                    </h1>
+                    <p className="mt-4 text-xl text-white">
+                        This is the user page. More content will be added soon.
+                    </p>
+                </div>
+            </main>
+        </div>
+    )
 }
 
-export default Header;
+export default User;
