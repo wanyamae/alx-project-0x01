@@ -1,5 +1,6 @@
 import Header from '@/components/layout/Header';
 import UserCard from '@/components/common/UserCard';
+import PostCard from '@/components/common/PostCard';
 import { UserProps } from '@/interfaces';
 import { PostProps } from '@/interfaces';
 
@@ -15,8 +16,13 @@ const Users: React.FC<{ users: UserProps[] }> = ({ users, posts }) => {
         </div>
         <div className="grid grid-cols-3 gap-2">
           {
-            posts?.map((user: UserProps, key: number) => (
+            users?.map((user: UserProps, key: number) => (
               <UserCard {...user} key={key} />
+            ))
+          }
+          {
+            posts.map(({ title, body, userId, id }: PostProps, key: number) => (
+              <PostCard title={title} body={body} userId={userId} id={id} key={key} />
             ))
           }
         </div>
@@ -31,10 +37,9 @@ export async function getStaticProps() {
 
   return {
     props: {
-        users
+      users
     }
-}
-
+  }
 }
 
 export default Users;
