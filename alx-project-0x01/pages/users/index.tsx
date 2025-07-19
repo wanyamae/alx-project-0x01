@@ -1,8 +1,9 @@
 import Header from '@/components/layout/Header';
 import UserCard from '@/components/common/UserCard';
 import { UserProps } from '@/interfaces';
+import { PostProps } from '@/interfaces';
 
-const Users: React.FC<{ users: UserProps[] }> = ({ users }) => {
+const Users: React.FC<{ users: UserProps[] }> = ({ users, posts }) => {
   console.log(users)
   return (
     <div className="flex flex-col h-screen">
